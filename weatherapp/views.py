@@ -9,7 +9,7 @@ def index(request):
     cities = City.objects.all() #  return all the cities in the database
     # city_weather = requests.get(url.format(city)).json() # request the API data and convert the JSON into python data types
     API_KEY= '' # Add your API key
-    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&appid='+ API_KEY
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid='+ API_KEY
 
     if request.method == 'POST': # only true if form is submitted
         form = CityForm(request.POST) # add actual request data to form for processing
